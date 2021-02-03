@@ -1,2 +1,2 @@
 log.MD
-pycache/
+__pycache__/
