@@ -11,13 +11,30 @@ class Vector:
         self.x = x
         self.y = y
         self.z = z
+
     
     def __str__(self):
         """
-        Dunder Method to represent the objects as strings for meaningful output formatting
+        Dunder Method to represent the objects as strings for meaningful output formatting in a human readable form
         """
-        return f"({self.x}, {self.y}, {self.z})"
+        return f"Vector object with coordinates x = {self.x}, y = {self.y} and z = {self.z}"
+
+    def __repr__(self):
+        """
+        Dunder Method to represent the objects as strings for meaningful output formatting 
+        """
+        return f"Vector(x = {self.x}, y = {self.y}, z = {self.z})"
+
+    def __eq__(self,other):
+        """
+        Dunder method to check equality of two vectors
+        This is a life saver while using unittest to assertEqual two objects
+        """
+        return self.x == other.x and self.y == other.y and self.z == other.z 
+
       
+    ## For now custom matcher object is avoided for unit testing
+
     def dot_product(self, other):
         """
         Method to  compute the dot product of two vectors
@@ -67,3 +84,4 @@ class Vector:
         Dunder method to overload the division operator
         """ 
         assert not isinstance(other, Vector) # To ensure that our division only works for scalar division
+        return Vector(self.x/other, self.y/other, self.z/other)
