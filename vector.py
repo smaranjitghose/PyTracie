@@ -2,7 +2,7 @@ import math
 
 class Vector:
     """
-    A three dimensional vector for usuage in 3D computer graphics
+    A three dimensional vector for usage in 3D computer graphics
     """
     def __init__(self, x=0.0, y=0.0, z=0.0):
         """
