@@ -46,6 +46,7 @@ class RenderEngine:
 
         hit_pos = ray_origin + ray_direction * dist_hit
         color += self.color_at(obj_hit, hit_pos, scene)
+        return Color
 
     def find_nearest(self, ray, scene):
         # Initializations
