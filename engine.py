@@ -1,8 +1,7 @@
-from Point import Point
-from Ray import Ray
-
 from color import Color
 from image import Image
+from point import Point
+from ray import Ray
 from scene import Scene
 
 
@@ -44,7 +43,7 @@ class RenderEngine:
         if obj_hit == None:
             return Color
 
-        hit_pos = ray_origin + ray_direction * dist_hit
+        hit_pos = ray.origin + ray.direction * dist_hit
         color += self.color_at(obj_hit, hit_pos, scene)
         return Color
 
